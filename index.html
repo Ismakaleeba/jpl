@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jinja Public Library | Innovation Hub</title>
+    <meta name="description" content="The leading public knowledge and innovation hub in Eastern Uganda. Empowering youth through learning, digital skills, creativity, and collaboration on the Nile.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Glassmorphic Navbar -->
+    <nav class="navbar">
+        <a href="#/" class="logo nav-link" data-link>
+            <div class="logo-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <div class="logo-main">Jinja Public Library</div>
+        </a>
+        
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#/" class="nav-link" data-link>Home</a></li>
+            <li><a href="#/about" class="nav-link" data-link>About</a></li>
+            <li><a href="#/programs" class="nav-link" data-link>Programs</a></li>
+            <li><a href="#/innovation-lab" class="nav-link" data-link>Innovation Lab</a></li>
+            <li><a href="#/events" class="nav-link" data-link>Events</a></li>
+            <li><a href="#/get-involved" class="btn btn-accent nav-link" data-link>Get Involved</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="app-content">
+        <!-- Dynamic content injected here -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col brand-col">
+                <div class="logo" style="margin-bottom: 20px;">
+                    <div class="logo-icon" style="background: transparent; box-shadow: none; border: 1px solid var(--accent-teal);"><i class="fa-solid fa-water"></i></div>
+                    <div class="logo-main">Jinja Public Library</div>
+                </div>
+                <p style="color: var(--text-muted);">The premier innovation and digital skills ecosystem in Eastern Uganda, situated on the Nile.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Platform</h3>
+                <ul>
+                    <li><a href="#/about" class="nav-link" data-link>Our Vision</a></li>
+                    <li><a href="#/programs" class="nav-link" data-link>Programs & Initiatives</a></li>
+                    <li><a href="#/innovation-lab" class="nav-link" data-link>The Innovation Lab</a></li>
+                    <li><a href="#/events" class="nav-link" data-link>Upcoming Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Connect</h3>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-location-dot" style="color: var(--accent-teal); margin-right: 10px;"></i> Jinja, Uganda</li>
+                    <li><i class="fa-solid fa-envelope" style="color: var(--accent-teal); margin-right: 10px;"></i> hello@jinjahub.ug</li>
+                    <li><i class="fa-solid fa-phone" style="color: var(--accent-teal); margin-right: 10px;"></i> +256 123 456 789</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Jinja Public Library. Empowering Youth on the Nile.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
