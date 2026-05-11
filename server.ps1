@@ -31,9 +31,10 @@ try {
                 default { $response.ContentType = "application/octet-stream" }
             }
             
-            $content = [System.IO.File]::ReadAllBytes($filePath)
-            $response.ContentLength64 = $content.Length
-            $response.OutputStream.Write($content, 0, $content.Length)
+            $fileStream = [System.IO.File]::OpenRead($filePath)
+            $response.ContentLength64 = $fileStream.Length
+            $fileStream.CopyTo($response.OutputStream)
+            $fileStream.Close()
         } else {
             $response.StatusCode = 404
             $buffer = [System.Text.Encoding]::UTF8.GetBytes("404 Not Found")

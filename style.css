@@ -200,22 +200,29 @@ ul { list-style: none; }
 }
 
 .logo-icon {
-    font-size: 18px;
-    color: #FFFFFF;
-    background: var(--primary-blue);
-    width: 36px;
-    height: 36px;
+    width: 64px;
+    height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 71, 171, 0.3);
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    background: rgba(255, 255, 255, 0.5); /* Subtle background for better visibility */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1)); /* Enhances visibility */
 }
 
 .logo-main {
     font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 1.2rem;
+    font-size: 1.4rem; /* Slightly larger to match icon */
     color: var(--text-main);
     letter-spacing: -0.5px;
 }
@@ -274,6 +281,11 @@ ul { list-style: none; }
     min-height: 100vh;
 }
 
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
 /* Page Transitions */
 .page-enter {
     animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -293,7 +305,21 @@ ul { list-style: none; }
     text-align: center;
     padding-top: 100px;
     position: relative;
-    /* We will use the bridge image here via inline style in app.js, with a bright overlay */
+}
+
+.hero-about {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 130px;
+    padding-bottom: 80px;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,71,171,0.6)), url('https://images.pexels.com/photos/1741231/pexels-photo-1741231.jpeg?auto=compress&cs=tinysrgb&w=1920');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
 }
 
 .hero-content {
@@ -624,8 +650,29 @@ ul { list-style: none; }
 /* Footer - Light Theme Footer */
 .footer {
     border-top: var(--glass-border);
-    padding: 100px 0 40px;
-    background: skyblue;
+    padding: 120px 0 60px;
+    background: #E0F2FE; /* Nile Blue background */
+    color: var(--text-main);
+}
+
+.footer .logo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer .logo-icon {
+    width: 120px;
+    height: 120px;
+    background: #FFFFFF;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 4px solid #FFFFFF;
+}
+
+.footer .logo-main {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    line-height: 1;
 }
 
 .footer-container {
@@ -690,7 +737,11 @@ ul { list-style: none; }
     font-weight: 500;
 }
 
-/* Responsive */
+@media (max-width: 1200px) {
+    .nav-links { gap: 20px; }
+    .nav-links a { font-size: 0.9rem; }
+}
+
 @media (max-width: 1024px) {
     .bento-grid { grid-template-columns: 1fr 1fr; }
     .bento-large { grid-column: span 1; }
@@ -700,31 +751,40 @@ ul { list-style: none; }
 @media (max-width: 768px) {
     .navbar {
         width: 95%;
-        padding: 15px 20px;
+        padding: 10px 20px;
     }
+    .logo-main { font-size: 1.1rem; }
+    .logo-icon { width: 48px; height: 48px; }
+    
     .nav-links {
         display: none;
         position: absolute;
-        top: 80px;
+        top: 75px;
         left: 0;
         width: 100%;
         background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(20px);
+        backdrop-filter: blur(25px);
         flex-direction: column;
-        padding: 30px;
-        border-radius: 20px;
+        padding: 40px 20px;
+        border-radius: 24px;
         border: var(--glass-border);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        box-shadow: 0 30px 60px rgba(0, 0, 100, 0.15);
+        text-align: center;
+        gap: 20px;
     }
     .nav-links.active { display: flex; }
     .mobile-toggle { display: block; }
     
+    .nav-links a { font-size: 1.1rem; width: 100%; padding: 10px 0; }
+    .nav-links a.btn { width: auto; display: inline-block; }
+
     .bento-grid { grid-template-columns: 1fr; }
     .split-section { grid-template-columns: 1fr; gap: 40px; }
     .stats-grid { grid-template-columns: 1fr 1fr; }
     .footer-container { grid-template-columns: 1fr; gap: 40px; }
     
     .hero h1 { font-size: 3.2rem; }
-    .hero-buttons { flex-direction: column; }
+    .hero-buttons { flex-direction: column; width: 100%; padding: 0 20px; }
+    .hero-buttons .btn { width: 100%; }
     .page-header h1 { font-size: 3rem; }
 }
