@@ -214,7 +214,7 @@ const ProgramsView = () => `
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img" style="background-image: url('debate.JPG');">
+                    <div class="card-img" style="background-image: url('/debate.JPG');">
                         <span class="card-tag" style="background: var(--accent-gold); color: #fff;">Debate</span>
                     </div>
                     <div class="card-content">
@@ -337,7 +337,7 @@ const EventsView = () => `
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img" style="background-image: url('debate.JPG');">
+                    <div class="card-img" style="background-image: url('/debate.JPG');">
                         <span class="card-tag" style="background: var(--accent-gold); color: #fff;">Debate</span>
                     </div>
                     <div class="card-content">
@@ -556,7 +556,7 @@ window.handleFormSubmit = (formId) => {
 
 const NileDebateView = () => `
     <div class="page-enter">
-        <section style="min-height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 130px; padding-bottom: 80px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('debate.JPG') center/cover fixed; position: relative; overflow: hidden;">
+        <section style="min-height: 85vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 130px; padding-bottom: 80px; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('/debate.JPG') center/cover fixed; position: relative; overflow: hidden;">
             <div class="container" style="position: relative; z-index: 2;">
                 <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 30px;">
                     <div class="hero-badge" style="background: var(--accent-gold); border: none; color: #000; font-weight: 800; transform: rotate(-2deg);"><i class="fa-solid fa-star"></i> THE PIONEER EDITION</div>
